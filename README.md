@@ -3,11 +3,10 @@ Parse unread emails from Google Scholar alerts and update README.md.
 
 ## Setting for First Use
 1. Enable Gmail API and Download Credentials
-   
-    Go to [Google Cloud Console](https://console.cloud.google.com/) 
-    Create a new project (or select an existing one).
-    Navigate to APIs & Services → Library, search for Gmail API, and enable it.
-    Go to APIs & Services → Credentials → Create Credentials → OAuth Client ID.
+    1. Go to [Google Cloud Console](https://console.cloud.google.com/) 
+    2. Create a new project (or select an existing one).
+    3. Navigate to APIs & Services → Library, search for Gmail API, and enable it.
+    4. Go to APIs & Services → Credentials → Create Credentials → OAuth Client ID.
 
         - Application type: Desktop app.
         
@@ -36,15 +35,15 @@ Parse unread emails from Google Scholar alerts and update README.md.
     }
     ```
 
-3. Configure OAuth Consent Screen (In Production)
-    In Google Cloud Console, go to APIs & Services → OAuth consent screen.
-    Choose External as the user type.
-    Fill in all required fields: App name, User support email, Authorized domains, Developer contact info.\
-    In the Scopes section, add: https://mail.google.com/, https://www.googleapis.com/auth/gmail.readonly
-    Skip the Test users section.
-    In the Publishing status section, click Publish App
+2. Configure OAuth Consent Screen (In Production)
+   1. In Google Cloud Console, go to APIs & Services → OAuth consent screen.
+   2. Choose External as the user type.
+   3. Fill in all required fields: App name, User support email, Authorized domains, Developer contact info.\
+   4. In the Scopes section, add: https://mail.google.com/, https://www.googleapis.com/auth/gmail.readonly
+   5. Skip the Test users section.
+   6. In the Publishing status section, click Publish App
       
-4. Run `script.sh`:
+3. Run `script.sh`:
     ```
     bash script.sh
     ```
@@ -52,7 +51,7 @@ Parse unread emails from Google Scholar alerts and update README.md.
 
     This will create a `./data/token.json` file.
 
-5. Copy the information from `token.json` into a GitHub Action secret variable named `TOKEN_CONFIG_JSON`.
+4. Copy the information from `token.json` into a GitHub Action secret variable named `TOKEN_CONFIG_JSON`.
 
     Example `token.json`:
     ```json
